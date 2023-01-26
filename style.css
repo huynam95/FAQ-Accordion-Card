@@ -1,0 +1,288 @@
+/* START */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+
+  text-rendering: optimizeSpeed;
+
+  color: #555;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+/* START */
+
+/* CONTAINER */
+.grid-2-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.container {
+  position: relative;
+
+  width: 100%;
+  max-width: calc(900rem / 16);
+
+  max-height: calc(500rem / 16);
+
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 2rem 3rem hsla(237, 12%, 33%, 0.661);
+}
+
+/* IMG */
+.illustration {
+  background: url("./images/illustration-woman-online-desktop.svg"),
+    url("./images/bg-pattern-desktop.svg");
+  background-size: 105%, calc(950rem / 16);
+  background-repeat: no-repeat;
+  background-position-x: calc(-70rem / 16), calc(-540rem / 16);
+  background-position-y: calc(80rem / 16), calc(-280rem / 16);
+}
+
+.woman-img {
+  display: none;
+}
+
+.pattern-img {
+  display: none;
+}
+
+.box-img {
+  position: absolute;
+  top: 45%;
+  left: -10%;
+}
+
+/* FAQ */
+.faq {
+  padding-top: calc(70rem / 16);
+  padding-right: calc(100rem / 16);
+  padding-bottom: calc(160rem / 16);
+  padding-left: calc(40rem / 16);
+
+  font-size: calc(14.5rem / 16);
+
+  color: hsl(238, 29%, 16%);
+}
+
+.heading {
+  margin-bottom: calc(36rem / 16);
+
+  font-size: calc(32rem / 16);
+
+  color: hsl(238, 29%, 16%);
+}
+
+.question:hover {
+  cursor: pointer;
+}
+
+.question-flex {
+  margin-bottom: calc(16rem / 16);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  transition: all 0.4s;
+}
+
+.question-flex.show {
+  font-weight: 700;
+}
+
+.question-flex button {
+  transition: all 0.6s;
+}
+
+.question-flex.show button {
+  transform: rotate(180deg);
+}
+
+.question-flex:hover {
+  color: hsl(14, 88%, 65%);
+}
+
+.question-answer {
+  margin-bottom: calc(12rem / 16);
+
+  font-size: calc(13rem / 16);
+  line-height: 1.4;
+
+  color: hsl(240, 6%, 50%);
+}
+
+.line {
+  margin-bottom: calc(16rem / 16);
+
+  border: 0.5px solid hsl(240, 5%, 91%);
+}
+
+/* BUTTON */
+.btn {
+  background: none;
+  cursor: pointer;
+}
+
+/* HIDDEN */
+.hidden {
+  display: none;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 62em) {
+  .container {
+    width: 80%;
+    max-width: calc(700rem / 16);
+    max-height: calc(500rem / 16);
+  }
+
+  .faq {
+    padding-top: calc(70rem / 16);
+    padding-right: calc(30rem / 16);
+    padding-bottom: calc(160rem / 16);
+    padding-left: calc(10rem / 16);
+  }
+
+  .illustration {
+    background-position-x: calc(-80rem / 16), calc(-660rem / 16);
+    background-position-y: calc(110rem / 16), calc(-320rem / 16);
+  }
+
+  .box-img {
+    scale: 0.8;
+    position: absolute;
+    top: 42%;
+    left: -13%;
+  }
+}
+
+@media (max-width: 53em) {
+  .grid-2-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    max-height: calc(450rem / 16);
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  .faq {
+    padding-top: calc(100rem / 16);
+    padding-right: calc(100rem / 16);
+    padding-bottom: calc(120rem / 16);
+    padding-left: calc(100rem / 16);
+  }
+
+  .box-img {
+    display: none;
+  }
+
+  .woman-img {
+    width: calc(200rem / 16);
+
+    display: block;
+
+    position: absolute;
+    top: -26%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+  }
+
+  .pattern-img {
+    width: calc(200rem / 16);
+
+    display: block;
+
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 40em) {
+  .faq {
+    padding-top: calc(100rem / 16);
+    padding-right: calc(50rem / 16);
+    padding-bottom: calc(120rem / 16);
+    padding-left: calc(50rem / 16);
+  }
+}
+
+@media (max-width: 27em) {
+  .faq {
+    padding-top: calc(100rem / 16);
+    padding-right: calc(20rem / 16);
+    padding-bottom: calc(120rem / 16);
+    padding-left: calc(20rem / 16);
+  }
+}
+/*
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
