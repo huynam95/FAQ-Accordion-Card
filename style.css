@@ -270,6 +270,10 @@ select {
     padding-bottom: calc(120rem / 16);
     padding-left: calc(50rem / 16);
   }
+
+  .container {
+    max-height: calc(490rem / 16);
+  }
 }
 
 @media (max-width: 27em) {
